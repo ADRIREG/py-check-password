@@ -6,11 +6,11 @@ def test_valid_password() -> None:
 
 
 def test_too_short_password() -> None:
-    assert check_password("qwertY3") is False
+    assert check_password("qwe@tY3") is False
 
 
 def test_returns_false_for_too_long_passwords() -> None:
-    assert check_password("Qwer2345vfg@drtrr") is False
+    assert check_password("Q1@ascdsadfghjklb") is False
 
 
 def test_non_valid_password() -> None:
@@ -30,7 +30,7 @@ def test_at_least_1_upper() -> None:
 
 
 def test_max_16_characters() -> None:
-    assert check_password("1AB12cd23@#34444") is True
+    assert check_password("1Q@qwertyuikjhgf") is True
 
 
 def test_min_8_characters() -> None:
@@ -44,6 +44,9 @@ def test_invalid_password() -> None:
 def test_invalid_character_space() -> None:
     assert check_password("Pass word1@") is False
 
+
+def test_other_characters() -> None:
+    assert check_password("żółtek@A1") is False
 
 def test_short_password_only_length_issue() -> None:
     assert check_password("A1@aBcD") is False
