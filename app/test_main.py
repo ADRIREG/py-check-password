@@ -48,5 +48,6 @@ def test_invalid_character_space() -> None:
 def test_other_characters() -> None:
     assert check_password("żółtek@A1") is False
 
+
 def test_short_password_only_length_issue() -> None:
     assert check_password("A1@aBcD") is False
